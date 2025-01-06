@@ -8,31 +8,31 @@ const ChartTwo: React.FC = () => {
 
   // بيانات المبيعات والإيرادات للأسبوع الحالي والأسبوع الماضي
   const dataThisWeek = [
-    { sales: [44, 55, 41, 67, 22, 43, 65], revenue: [13, 23, 20, 8, 13, 27, 15] },
+    { Admin: [44, 55, 41, 67, 22, 43, 65], users: [13, 23, 20, 8, 13, 27, 15] },
   ];
 
   const dataLastWeek = [
-    { sales: [50, 60, 45, 70, 30, 50, 60], revenue: [18, 25, 22, 10, 15, 30, 20] },
+    { Admin: [50, 60, 45, 70, 30, 50, 60], users: [18, 25, 22, 10, 15, 30, 20] },
   ];
 
   // تغيير البيانات بناءً على الفترة المحددة
   const series = selectedPeriod === "This Week" ? [
     {
-      name: "Sales",
-      data: dataThisWeek[0].sales,
+      name: "Admin",
+      data: dataThisWeek[0].Admin,
     },
     {
-      name: "Revenue",
-      data: dataThisWeek[0].revenue,
+      name: "users",
+      data: dataThisWeek[0].users,
     },
   ] : [
     {
-      name: "Sales",
-      data: dataLastWeek[0].sales,
+      name: "Admin",
+      data: dataLastWeek[0].Admin,
     },
     {
-      name: "Revenue",
-      data: dataLastWeek[0].revenue,
+      name: "users",
+      data: dataLastWeek[0].users,
     },
   ];
 

@@ -7,7 +7,7 @@ const brandData: BRAND[] = [
     name: "Google",
     visitors: 3.5,
     revenues: "5,768",
-    sales: 590,
+    Admin: 590,
     conversion: 4.8,
   },
   {
@@ -15,7 +15,7 @@ const brandData: BRAND[] = [
     name: "X.com",
     visitors: 2.2,
     revenues: "4,635",
-    sales: 467,
+    Admin: 467,
     conversion: 4.3,
   },
   {
@@ -23,7 +23,7 @@ const brandData: BRAND[] = [
     name: "Github",
     visitors: 2.1,
     revenues: "4,290",
-    sales: 420,
+    Admin: 420,
     conversion: 3.7,
   },
   {
@@ -31,7 +31,7 @@ const brandData: BRAND[] = [
     name: "Vimeo",
     visitors: 1.5,
     revenues: "3,580",
-    sales: 389,
+    Admin: 389,
     conversion: 2.5,
   },
   {
@@ -39,7 +39,7 @@ const brandData: BRAND[] = [
     name: "Facebook",
     visitors: 1.2,
     revenues: "2,740",
-    sales: 230,
+    Admin: 230,
     conversion: 1.9,
   },
 ];
@@ -70,7 +70,7 @@ const TableOne = () => {
           </div>
           <div className="hidden px-2 pb-3.5 text-center sm:block">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Sales
+              Admin
             </h5>
           </div>
           <div className="hidden px-2 pb-3.5 text-center sm:block">
@@ -112,7 +112,7 @@ const TableOne = () => {
 
             <div className="hidden items-center justify-center px-2 py-4 sm:flex">
               <p className="font-medium text-dark dark:text-white">
-                {brand.sales}
+                {brand.Admin}
               </p>
             </div>
 
