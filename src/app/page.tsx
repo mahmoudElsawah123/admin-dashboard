@@ -29,7 +29,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
             "Titre": "Design Graphique",
             "Description": "Designs modernes et créatifs pour vos projets.",
             "Prix": "300€",
-            "Images": ["graphic_design1.jpg", "graphic_design2.jpg"],
+            "Images": ["", ""],
             "FreeLanceNom": "Jane Smith"
           }
         ]
