@@ -6,11 +6,9 @@ import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
 const ChartThree: React.FC = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("Monthly");
 
-  // بيانات الأجهزة المستخدمة بناءً على الفترة الزمنية المحددة
   const dataMonthly = [65, 34, 12, 56];
   const dataYearly = [70, 20, 5, 60];
 
-  // تغيير البيانات بناءً على الفترة الزمنية
   const series = selectedPeriod === "Monthly" ? dataMonthly : dataYearly;
 
   const options: ApexOptions = {
@@ -19,7 +17,7 @@ const ChartThree: React.FC = () => {
       type: "donut",
     },
     colors: ["#5750F1", "#5475E5", "#8099EC", "#ADBCF2"],
-    labels: ["Desktop", "Tablet", "Mobile", "Unknown"],
+    labels: ["FreeLancer", "Admin", "Client"],
     legend: {
       show: false,
       position: "bottom",
@@ -28,14 +26,14 @@ const ChartThree: React.FC = () => {
     plotOptions: {
       pie: {
         donut: {
-          size: "80%",
+          size: "30%",
           background: "transparent",
           labels: {
             show: true,
             total: {
               show: true,
               showAlways: true,
-              label: "Visitors",
+              label: "All Admin",
               fontSize: "16px",
               fontWeight: "400",
             },
@@ -80,7 +78,7 @@ const ChartThree: React.FC = () => {
       <div className="mb-9 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
-            Used Devices
+            All Users
           </h4>
         </div>
         <div>
@@ -103,8 +101,8 @@ const ChartThree: React.FC = () => {
             <div className="flex w-full items-center">
               <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-blue"></span>
               <p className="flex w-full justify-between text-body-sm font-medium text-dark dark:text-dark-6">
-                <span> Desktop </span>
-                <span> {selectedPeriod === "Monthly" ? "65%" : "70%"}</span>
+                <span> Freelancer </span>
+                <span> {selectedPeriod === "Monthly" ? "33%" : "67%"}</span>
               </p>
             </div>
           </div>
@@ -112,7 +110,7 @@ const ChartThree: React.FC = () => {
             <div className="flex w-full items-center">
               <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-blue-light"></span>
               <p className="flex w-full justify-between text-body-sm font-medium text-dark dark:text-dark-6">
-                <span> Tablet </span>
+                <span> Admin </span>
                 <span> {selectedPeriod === "Monthly" ? "34%" : "20%"}</span>
               </p>
             </div>
@@ -121,7 +119,7 @@ const ChartThree: React.FC = () => {
             <div className="flex w-full items-center">
               <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-blue-light-2"></span>
               <p className="flex w-full justify-between text-body-sm font-medium text-dark dark:text-dark-6">
-                <span> Mobile </span>
+                <span> Client </span>
                 <span> {selectedPeriod === "Monthly" ? "45%" : "5%"}</span>
               </p>
             </div>
