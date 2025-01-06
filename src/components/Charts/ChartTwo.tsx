@@ -1,17 +1,38 @@
 import { ApexOptions } from "apexcharts";
-import React from "react";
+import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
 
 const ChartTwo: React.FC = () => {
-  const series = [
+  const [selectedPeriod, setSelectedPeriod] = useState("This Week");
+
+  // بيانات المبيعات والإيرادات للأسبوع الحالي والأسبوع الماضي
+  const dataThisWeek = [
+    { sales: [44, 55, 41, 67, 22, 43, 65], revenue: [13, 23, 20, 8, 13, 27, 15] },
+  ];
+
+  const dataLastWeek = [
+    { sales: [50, 60, 45, 70, 30, 50, 60], revenue: [18, 25, 22, 10, 15, 30, 20] },
+  ];
+
+  // تغيير البيانات بناءً على الفترة المحددة
+  const series = selectedPeriod === "This Week" ? [
     {
       name: "Sales",
-      data: [44, 55, 41, 67, 22, 43, 65],
+      data: dataThisWeek[0].sales,
     },
     {
       name: "Revenue",
-      data: [13, 23, 20, 8, 13, 27, 15],
+      data: dataThisWeek[0].revenue,
+    },
+  ] : [
+    {
+      name: "Sales",
+      data: dataLastWeek[0].sales,
+    },
+    {
+      name: "Revenue",
+      data: dataLastWeek[0].revenue,
     },
   ];
 
@@ -29,7 +50,6 @@ const ChartTwo: React.FC = () => {
         enabled: false,
       },
     },
-
     responsive: [
       {
         breakpoint: 1536,
@@ -55,7 +75,6 @@ const ChartTwo: React.FC = () => {
     dataLabels: {
       enabled: false,
     },
-
     grid: {
       strokeDashArray: 5,
       xaxis: {
@@ -69,7 +88,6 @@ const ChartTwo: React.FC = () => {
         },
       },
     },
-
     xaxis: {
       categories: ["M", "T", "W", "T", "F", "S", "S"],
     },
@@ -79,7 +97,6 @@ const ChartTwo: React.FC = () => {
       fontFamily: "Satoshi",
       fontWeight: 500,
       fontSize: "14px",
-
       markers: {
         radius: 99,
         width: 16,
@@ -93,6 +110,10 @@ const ChartTwo: React.FC = () => {
     },
   };
 
+  const handleSelectChange = (value: string) => {
+    setSelectedPeriod(value);
+  };
+
   return (
     <div className="col-span-12 rounded-[10px] bg-white px-7.5 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-5">
       <div className="mb-4 justify-between gap-4 sm:flex">
@@ -102,7 +123,10 @@ const ChartTwo: React.FC = () => {
           </h4>
         </div>
         <div>
-          <DefaultSelectOption options={["This Week", "Last Week"]} />
+          <DefaultSelectOption
+            options={["This Week", "Last Week"]}
+            onChange={handleSelectChange}
+          />
         </div>
       </div>
 
